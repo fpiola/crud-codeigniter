@@ -21,6 +21,11 @@ CREATE TABLE IF NOT EXISTS `produto` (
   PRIMARY KEY (`id_produto`)
 ) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
+-- Chave estrangeira
+ALTER TABLE produto
+ADD FOREIGN KEY (categoriacorrespondente)
+REFERENCES produto(id_categoria);
+
 INSERT INTO produto VALUES
 (DEFAULT ,'Xiaomi Mi8 Lite', 'Armazenamento externo até 256 GB', 23, '1399.00',1),
 (DEFAULT ,'Smart TV 4K LED 43 LG', 'Conectividade sem fio', 3, '1757.41',2),
